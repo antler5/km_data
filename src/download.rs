@@ -23,6 +23,7 @@ impl Data {
         let base_dirs = BaseDirs::new().ok_or(Error::BaseDirs)?;
         let data_dir = base_dirs.data_dir().join("keymeow");
         if !data_dir.exists() {
+            Self::create_directories(&data_dir)?;
             download_files(&data_dir)?;
         }
         Self::new()
