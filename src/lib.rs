@@ -144,9 +144,9 @@ impl Data {
     #[cfg(feature = "layouts")]
     pub fn get_layout(&self, s: &str) -> Result<keymeow::LayoutData> {
         let path = self
-            .keyboards
+            .layouts
             .get(s)
-            .ok_or_else(|| Error::Locate(DataKind::Keyboard, s.to_owned()))?;
+            .ok_or_else(|| Error::Locate(DataKind::Layout, s.to_owned()))?;
         let b = fs::read_to_string(path).map_err(Error::FileRead)?;
         serde_json::from_str(&b).map_err(Error::JsonDeserialize)
     }
