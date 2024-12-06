@@ -33,15 +33,15 @@ impl Data {
 pub fn download_files(data_dir: &Path) -> Result<()> {
     download_repo(
         &data_dir.join("layouts"),
-        "https://api.github.com/repos/semilin/km_layouts/contents/",
+        "https://api.github.com/repos/antler5/km_layouts/contents/",
     )?;
     download_repo(
         &data_dir.join("metrics"),
-        "https://api.github.com/repos/semilin/km_metric_data/contents/",
+        "https://api.github.com/repos/antler5/km_metric_data/contents/",
     )?;
     download_repo(
         &data_dir.join("corpora"),
-        "https://api.github.com/repos/semilin/km_corpora/contents/",
+        "https://api.github.com/repos/antler5/km_corpora/contents/",
     )?;
     Ok(())
 }
